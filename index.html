@@ -38,14 +38,12 @@
         text-align: center;
       }
 
-
     </style>
 </head>
 
 <body>
 <div id="main">
     <h1>Create new item</h1>
-    <img src="">
     <button id="create">Create</button>
 </div>
 <form id="form">
@@ -56,16 +54,16 @@
 </form>
 
 <script src="https://telegram.org/js/telegram-web-app.js"></script>
-<script>
-  let tg = window.Telegram.WebApp;
-  let create = document.getElementById("create");
-  let done = document.getElementById("done");
+    <script>
+    let tg = window.Telegram.WebApp;
+    let create = document.getElementById("create");
+    let done = document.getElementById("done");
 
     create.addEventListener("click", () => {
         document.getElementById("main").style.display = "none";
         document.getElementById("form").style.display = "block";
     });
 
-</script>
+    </script>
 </body>
 </html>
