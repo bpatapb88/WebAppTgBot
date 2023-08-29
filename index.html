@@ -44,7 +44,7 @@
 
 <body>
   <div id="main">
-    <h1>Create item</h1>
+    <h1>Create new item</h1>
     <img src="">
     <button id="create">Create</button>
   </div>
@@ -60,7 +60,12 @@
   let tg = window.Telegram.WebApp;
   let create = document.getElementById("create");
   let done = document.getElementById("done");
-
+buy.addEventListener("click", () => {
+    document.getElementById("main").style.display = "none";
+    document.getElementById("form").style.display = "block";
+    
+    
+})
   
 </script>
 </body>
