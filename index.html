@@ -10,7 +10,7 @@
     <meta name="HandheldFriendly" content="True" />
     <meta name="robots" content="noindex,nofollow" />
     <title>Dresser</title>
-    <!-- <style>
+    <style>
         @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200;500&display=swap');
         
         * {
@@ -83,12 +83,12 @@
             border-color: #db5d5d;
         }
 
-    </style> -->
+    </style>
 </head>
 
 <body>
 <div id="main">
-    <h1>Create item#10</h1>
+    <h1>Create item#11</h1>
     <img src="https://raw.githubusercontent.com/bpatapb88/WebAppTgBot/dd7121672790f0fa6717253f926a46ffd2280cd2/App%20Logo.png">
     <button id="create">Create</button>
 </div>
@@ -99,10 +99,12 @@
     <button id="done">Done</button>
 </form>
 
-<!-- <script src="https://telegram.org/js/telegram-web-app.js"></script> -->
+<script src="https://telegram.org/js/telegram-web-app.js"></script>
     <script>
+    let tg = window.Telegram.WebApp;
     let create = document.getElementById("create");
     let done = document.getElementById("done");
+    tg.expand();
     
 
     create.addEventListener("click", () => {
@@ -112,17 +114,16 @@
 
     done.addEventListener("click", () => {
         let item_name = document.getElementById("item_name")
-        let item_brand = document.getElementById("item_brand")
-        let item_color = document.getElementById("item_color")
+        // let item_brand = document.getElementById("item_brand")
+        // let item_color = document.getElementById("item_color")
         var nameToString;
         if (item_name.outerHTML)
             nameToString = item_name.outerHTML;
         else if (XMLSerializer)
             nameToString = new XMLSerializer().serializeToString(item_name); 
-        
-        console.log(nameToString);
-        console.log("end log!");
-        document.getElementById("main").style.display = "none";
+
+        tg.sendData(nameToString);
+        tg.close();
     });
 
     </script>
