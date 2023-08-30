@@ -101,10 +101,10 @@
 
 <script src="https://telegram.org/js/telegram-web-app.js"></script>
     <script>
-    let tg = window.Telegram.WebApp;
+    // let tg = window.Telegram.WebApp;
     let create = document.getElementById("create");
     let done = document.getElementById("done");
-    tg.expand();
+    // tg.expand();
 
     create.addEventListener("click", () => {
         document.getElementById("main").style.display = "none";
@@ -126,9 +126,9 @@
         console.log("end log!");
         
 
-        tg.sendData("item_name");
+        // tg.sendData("item_name");
 
-        tg.close();
+        // tg.close();
     });
 
     </script>
