@@ -104,6 +104,7 @@
     let tg = window.Telegram.WebApp;
     let create = document.getElementById("create");
     let done = document.getElementById("done");
+    tg.expand();
 
     create.addEventListener("click", () => {
         document.getElementById("main").style.display = "none";
@@ -111,6 +112,17 @@
     });
 
     done.addEventListener("click", () => {
+        let item_name = document.getElementById("item_name")
+        let item_brand = document.getElementById("item_brand")
+        let item_color = document.getElementById("item_color")
+
+        let data = {
+            item_name: item_name,
+            item_brand: item_brand,
+            item_color: item_color
+        }
+        tg.sendData(JSON.stringify(data));
+
         tg.close();
     });
 
