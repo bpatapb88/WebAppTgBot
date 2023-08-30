@@ -88,7 +88,7 @@
 
 <body>
 <div id="main">
-    <h1>Create item</h1>
+    <h1>Create item#2</h1>
     <img src="https://raw.githubusercontent.com/bpatapb88/WebAppTgBot/dd7121672790f0fa6717253f926a46ffd2280cd2/App%20Logo.png">
     <button id="create">Create</button>
 </div>
@@ -116,12 +116,7 @@
         let item_brand = document.getElementById("item_brand")
         let item_color = document.getElementById("item_color")
 
-        let data = {
-            item_name: item_name,
-            item_brand: item_brand,
-            item_color: item_color
-        }
-        tg.sendData(JSON.stringify(data));
+        tg.sendData(item_name);
 
         tg.close();
     });
