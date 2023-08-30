@@ -114,9 +114,13 @@
         let item_name = document.getElementById("item_name")
         let item_brand = document.getElementById("item_brand")
         let item_color = document.getElementById("item_color")
-
+        var nameToString;
+        if (item_name.outerHTML)
+            nameToString = item_name.outerHTML;
+        else if (XMLSerializer)
+            nameToString = new XMLSerializer().serializeToString(item_name); 
         
-        console.log(item_name);
+        console.log(nameToString);
         console.log("end log!");
         document.getElementById("main").style.display = "none";
     });
