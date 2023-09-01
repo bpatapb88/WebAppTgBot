@@ -88,7 +88,7 @@
 
 <body>
 <div id="main">
-    <h1>Create item#15</h1>
+    <h1>Create item#16</h1>
     <img src="https://raw.githubusercontent.com/bpatapb88/WebAppTgBot/dd7121672790f0fa6717253f926a46ffd2280cd2/App%20Logo.png">
     <button id="create">Create</button>
 </div>
@@ -114,18 +114,13 @@
 
     done.addEventListener("click", () => {
         let item_name = document.getElementById("item_name");
-        let item_brand = document.getElementById("item_brand");
-        let item_color = document.getElementById("item_color");
-        var url_string = window.location;
-        var url = new URL(url_string);
+        var url = new URL(window.location);
         var fileId = url.searchParams.get("fileId");
         var isPhoto = url.searchParams.get("isPhoto");
         var userId = tg.initDataUnsafe.user.id;
         
         let data = {
             item_name: item_name.value,
-            item_brand: item_brand.value,
-            item_color: item_color.color,
             file_id: fileId,
             is_photo: isPhoto,
             user_id: userId
