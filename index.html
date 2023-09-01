@@ -117,13 +117,12 @@
         var url = new URL(window.location);
         var fileId = url.searchParams.get("fileId");
         var isPhoto = url.searchParams.get("isPhoto");
-        var userId = tg.initDataUnsafe.user.id;
+        // var userId = tg.initDataUnsafe.user.id;
         
         let data = {
             item_name: item_name.value,
             file_id: fileId,
-            is_photo: isPhoto,
-            user_id: userId
+            is_photo: isPhoto
         };
 
         tg.sendData(JSON.stringify(data));
