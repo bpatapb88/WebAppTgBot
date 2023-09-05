@@ -88,7 +88,7 @@
 
 <body>
 <div id="main">
-    <h1>Create item#20</h1>
+    <h1>Create item#21</h1>
     <img id="image" src="https://raw.githubusercontent.com/bpatapb88/WebAppTgBot/dd7121672790f0fa6717253f926a46ffd2280cd2/App%20Logo.png">
     <button id="create">Create</button>
 </div>
@@ -111,7 +111,7 @@
     var apiKey = url.searchParams.get("apiKey");
     var chatId = url.searchParams.get("chatId");
 
-    let url_image1 = "https://api.telegram.org/bot${apiKey}/getFile?file_id=${fileId}"
+    let url_image1 = sprintf('https://api.telegram.org/bot%s/getFile?file_id=%s', apiKey, fileId)
 
     fetch(url_image1)
       .then(response => {
@@ -135,8 +135,6 @@
         console.error('Fetch error:', error);
       });
     
-    
-
     create.addEventListener("click", () => {
         document.getElementById("main").style.display = "none";
         document.getElementById("form").style.display = "block";
