@@ -88,7 +88,7 @@
 
 <body>
 <div id="main">
-    <h1>Create item#23</h1>
+    <h1>Create item</h1>
     <img id="image" src="https://raw.githubusercontent.com/bpatapb88/WebAppTgBot/dd7121672790f0fa6717253f926a46ffd2280cd2/App%20Logo.png">
     <button id="create">Create</button>
 </div>
@@ -111,32 +111,7 @@
     var url = new URL(window.location);
     var fileId = url.searchParams.get("fileId");
     var isPhoto = url.searchParams.get("isPhoto");
-    var apiKey = url.searchParams.get("apiKey");
     var chatId = url.searchParams.get("chatId");
-
-    let url_image1 = 'https://api.telegram.org/bot' + apiKey + '/getFile?file_id=' + fileId
-
-    fetch(url_image1)
-      .then(response => {
-    // Check if the response status is OK (200).
-        if (!response.ok) {
-          throw new Error(`HTTP error! Status: ${response.status}`);
-        }
-    // Parse the JSON data from the response.
-        return response.json();
-      })
-      .then(data => {
-        // Handle the JSON data here.
-        console.log(data);
-        let path = data.result.file_path
-        let url_image2 = "https://api.telegram.org/file/bot${apiKey}/${path}"
-        let image = document.getElementById("image");
-        image.src = url_image2
-      })
-      .catch(error => {
-    // Handle any errors that occurred during the fetch.
-        console.error('Fetch error:', error);
-      });
     
     create.addEventListener("click", () => {
         document.getElementById("main").style.display = "none";
@@ -147,8 +122,6 @@
         let item_name = document.getElementById("item_name");
         let item_brand = document.getElementById("item_brand");
         let item_color = document.getElementById("item_color");
-        
-        // var userId = tg.initDataUnsafe.user.id;
         
         let data = {
             item_name: item_name.value,
